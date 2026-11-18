@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "In-Vogue Media — Capturăm momentele tale speciale",
+      "hasCanvas": false,
+      "bodyTextLen": 3025,
+      "bodyTextHash": "11ce69a99e11fda0f9a1ab297b939309e974e3d4842535a4bcc45a4341d41329",
+      "bodyTextPrefix": "VEZI Sari la conținut In-Vogue MEDIA PORTOFOLIU SERVICII RECENZI",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "In-Vogue Media — Capturăm momentele tale speciale",
+      "hasCanvas": false,
+      "bodyTextLen": 2988,
+      "bodyTextHash": "5bfc28576eaffa90a343bccc8b426756cd8155785c4b2434691458229cd348f2",
+      "bodyTextPrefix": "VEZI Sari la conținut In-Vogue MEDIA 0754 970 688 FOTO & FILM · ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

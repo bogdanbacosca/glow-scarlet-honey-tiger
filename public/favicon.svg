@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="In-Vogue Media">
+  <rect width="32" height="32" rx="7" fill="#12100e"/>
+  <path d="M6 6.2v16.2" stroke="#f3eee6" stroke-width="3.4" stroke-linecap="square"/>
+  <path d="M12.4 6.2 18.4 22.4 26.8 6.2" fill="none" stroke="#c9a36a" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="square"/>
+  <path d="M6 26.4h20.2" stroke="#c44536" stroke-width="2.8" stroke-linecap="square"/>
+</svg>
