@@ -568,6 +568,30 @@
 .photo-cursor.is-shooting {
   transform: translate(-50%, -50%) scale(0.84);
   transition: transform 0.1s ease;
+  position: relative;
+}
+
+/* Flash effect when taking a photo */
+.photo-cursor.is-shooting::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-film);
+  opacity: 0.8;
+  border-radius: 50%;
+  animation: flash 0.4s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
 }
 
 .folder-grid {

@@ -46,11 +46,28 @@ export function PhotoCursor() {
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <rect x="5" y="10" width="22" height="12" rx="2" fill="var(--color-paper)" stroke="var(--color-ink)" strokeWidth="1.6" />
-        <circle cx="22" cy="16" r="5" fill="#12100e" stroke="var(--color-paper)" strokeWidth="1.8" />
-        <circle cx="22" cy="16" r="1.6" fill="var(--color-paper)" />
-        <rect x="7.5" y="7.5" width="3.5" height="1.5" rx="0.5" fill="var(--color-paper)" />
-        <circle cx="20" cy="12.5" r="0.7" fill="#c9a36a" />
+        <g stroke="var(--color-ink)" strokeWidth="1.2">
+          {/* Top-left focus point */}
+          <circle cx="8" cy="8" r="3" />
+          {/* Top-center focus point */}
+          <circle cx="16" cy="8" r="3" />
+          {/* Top-right focus point */}
+          <circle cx="24" cy="8" r="3" />
+          {/* Middle-left focus point */}
+          <circle cx="8" cy="16" r="3" />
+          {/* Center focus point (target area) */}
+          <circle cx="16" cy="16" r="3" fill="var(--color-film)" />
+          {/* Middle-right focus point */}
+          <circle cx="24" cy="16" r="3" />
+          {/* Bottom-left focus point */}
+          <circle cx="8" cy="24" r="3" />
+          {/* Bottom-center focus point */}
+          <circle cx="16" cy="24" r="3" />
+          {/* Bottom-right focus point */}
+          <circle cx="24" cy="24" r="3" />
+        </g>
+        {/* Center circle representing the lens */}
+        <circle cx="16" cy="16" r="6" fill="none" stroke="var(--color-ink)" strokeWidth="1.5" />
       </svg>
     </div>
   );
