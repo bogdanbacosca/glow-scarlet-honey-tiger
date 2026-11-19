@@ -6,7 +6,7 @@ export function SiteFooter() {
     <footer className="border-t border-line">
       <div className="wrap-wide grid gap-10 py-14 md:grid-cols-12">
         <div className="md:col-span-5">
-          <img src="/logo.svg" alt="In-Vogue Media" className="h-12 w-auto md:h-14 mb-4" />
+          <img src="/logo.svg" alt="In-Vogue Media" className="h-20 w-auto md:h-24 mb-4" />
           <p className="lede mt-5">
             Capturăm momentele tale speciale. Nunți, botezuri, corporate, studio, majorate.
           </p>
