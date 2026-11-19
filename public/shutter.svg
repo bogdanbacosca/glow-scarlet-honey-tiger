@@ -1,8 +1,28 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg height="200px" width="200px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 28.3 28.3" xml:space="preserve" fill="#000000" style="width: 200px; height: 200px; color: rgb(0, 0, 0);">
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-<g id="SVGRepo_iconCarrier">
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --> <g> <g> <path style="fill:#030104;" d="M8.495,3.628c0,0-3.556,1.322-5.656,6.294l11.585-2.19L8.495,3.628z"/> <path style="fill:#030104;" d="M2.664,10.631c0,0-1.568,3.455,0.481,8.448l6.612-9.763L2.664,10.631z"/> <path style="fill:#030104;" d="M3.588,19.571c0,0,1.322,3.556,6.294,5.656L7.693,13.64L3.588,19.571z"/> <path style="fill:#030104;" d="M10.591,25.401c0,0,3.455,1.567,8.448-0.481l-9.763-6.61L10.591,25.401z"/> <path style="fill:#030104;" d="M19.722,24.629c0,0,3.557-1.322,5.656-6.296l-11.586,2.189L19.722,24.629z"/> <path style="fill:#030104;" d="M25.071,9.177l-6.61,9.763l7.093-1.316C25.554,17.625,27.12,14.17,25.071,9.177z"/> <path style="fill:#030104;" d="M24.628,8.685c0,0-1.322-3.556-6.295-5.655l2.189,11.585L24.628,8.685z"/> <path style="fill:#030104;" d="M17.624,2.855c0,0-3.453-1.568-8.447,0.482l9.764,6.61L17.624,2.855z"/> <path style="fill:#030104;" d="M14.151,0C6.336,0,0,6.336,0,14.15C0,21.963,6.335,28.3,14.151,28.3 c7.813,0,14.149-6.338,14.149-14.15C28.301,6.336,21.965,0,14.151,0z M14.151,27.206c-7.199,0-13.057-5.857-13.057-13.056 S6.952,1.094,14.151,1.094c7.197,0,13.055,5.857,13.055,13.056C27.206,21.349,21.348,27.206,14.151,27.206z"/> </g> </g> </g>
-</svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<g id="SVGRepo_bgCarrier">
+</g>
+<g id="SVGRepo_tracerCarrier">
+</g>
+<g id="SVGRepo_iconCarrier">
+	<g>
+		<g>
+			<path class="st0" d="M60,25.6c0,0-25.1,9.3-40,44.5l81.9-15.5L60,25.6z"/>
+			<path class="st0" d="M18.8,75.1c0,0-11.1,24.4,3.4,59.7l46.7-69L18.8,75.1z"/>
+			<path class="st0" d="M25.4,138.3c0,0,9.3,25.1,44.5,40L54.4,96.4L25.4,138.3z"/>
+			<path class="st0" d="M74.8,179.5c0,0,24.4,11.1,59.7-3.4l-69-46.7L74.8,179.5z"/>
+			<path class="st0" d="M139.4,174.1c0,0,25.1-9.3,40-44.5L97.5,145L139.4,174.1z"/>
+			<path class="st0" d="M177.2,64.9l-46.7,69l50.1-9.3C180.6,124.6,191.7,100.1,177.2,64.9z"/>
+			<path class="st0" d="M174,61.4c0,0-9.3-25.1-44.5-40l15.5,81.9L174,61.4z"/>
+			<path class="st0" d="M124.6,20.2c0,0-24.4-11.1-59.7,3.4l69,46.7L124.6,20.2z"/>
+			<path class="st0" d="M100,0C44.8,0,0,44.8,0,100c0,55.2,44.8,100,100,100c55.2,0,100-44.8,100-100C200,44.8,155.2,0,100,0z
+				 M100,192.3c-50.9,0-92.3-41.4-92.3-92.3S49.1,7.7,100,7.7c50.9,0,92.3,41.4,92.3,92.3C192.3,150.9,150.9,192.3,100,192.3z"/>
+		</g>
+	</g>
+</g>
+</svg>
