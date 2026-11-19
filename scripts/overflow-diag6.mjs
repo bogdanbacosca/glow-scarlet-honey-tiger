@@ -1,0 +1,11 @@
+import { chromium } from "playwright";
+const browser = await chromium.launch({ headless: true, args: ["--no-sandbox"] });
+const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
+await page.goto("http://127.0.0.1:8080/", { waitUntil: "domcontentloaded" });
+await page.waitForTimeout(1500);
+const before = await page.evaluate(() => document.documentElement.scrollWidth);
+await page.evaluate(() => { document.body.style.overflowX = "clip"; });
+await page.waitForTimeout(100);
+const after = await page.evaluate(() => document.documentElement.scrollWidth);
+console.log({ before, after });
+await browser.close();

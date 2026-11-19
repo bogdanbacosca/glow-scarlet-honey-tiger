@@ -1,7 +1,7 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
-import { CameraCursor } from "@/components/camera-cursor";
+import { PhotoCursor } from "@/components/camera-cursor";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import appCss from "../styles.css?url";
@@ -41,7 +41,7 @@ export const Route = createRootRoute({
         <PreviewHostBridge />
         <AuthProvider>
           <div id="top">
-            <CameraCursor />
+            <PhotoCursor />
             <SiteHeader />
             <Outlet />
             <SiteFooter />

@@ -32,6 +32,11 @@
     color: var(--color-paper);
     min-height: 100svh;
     text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  html {
+    overflow-x: clip;
   }
 
   ::selection {
@@ -46,16 +51,16 @@
 }
 
 @media (hover: hover) and (pointer: fine) and (min-width: 1080px) {
-  html.has-cam,
-  html.has-cam body,
-  html.has-cam a,
-  html.has-cam button {
+  html.has-photo-cursor,
+  html.has-photo-cursor body,
+  html.has-photo-cursor a,
+  html.has-photo-cursor button {
     cursor: none;
   }
 
-  html.has-cam input,
-  html.has-cam textarea,
-  html.has-cam select {
+  html.has-photo-cursor input,
+  html.has-photo-cursor textarea,
+  html.has-photo-cursor select {
     cursor: text;
   }
 }
@@ -542,112 +547,27 @@
   color: var(--color-champagne);
 }
 
-.cam,
-.reticle {
+.photo-cursor {
   position: fixed;
   left: 0;
   top: 0;
   z-index: 90;
+  width: 30px;
+  height: 30px;
   pointer-events: none;
-  opacity: 0;
   will-change: transform;
+  filter: drop-shadow(0 6px 12px rgb(0 0 0 / 0.5));
 }
 
-.cam-svg {
-  width: 4.4rem;
-  height: auto;
-  filter: drop-shadow(0 8px 16px rgb(0 0 0 / 0.45));
+.cam-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-.cam-body,
-.cam-bump {
-  fill: #f6f1e8;
-  stroke: #12100e;
-  stroke-width: 1.6;
-}
-
-.cam-lens {
-  fill: #1c1916;
-  stroke: #12100e;
-  stroke-width: 1.5;
-}
-
-.cam-glass {
-  fill: #2c261f;
-  stroke: #c9a36a;
-  stroke-width: 1.2;
-}
-
-.cam-catch {
-  fill: var(--color-paper);
-}
-
-.cam-dot {
-  fill: var(--color-film);
-}
-
-.cam-flash {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  pointer-events: none;
-  background: #fff;
-  opacity: 0;
-}
-
-.cam-flash.is-on {
-  animation: shutter 0.42s ease-out;
-}
-
-.reticle {
-  width: 2.15rem;
-  height: 2.15rem;
-}
-
-.tgt-ring {
-  position: absolute;
-  inset: 0.28rem;
-  border: 1.5px solid #f6f1e8;
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px rgb(18 16 14 / 0.55);
-}
-
-.tgt-h,
-.tgt-v {
-  position: absolute;
-  background: #f6f1e8;
-  box-shadow: 0 0 0 1px rgb(18 16 14 / 0.45);
-}
-
-.tgt-h {
-  left: 0;
-  right: 0;
-  top: 50%;
-  height: 1px;
-  transform: translateY(-50%);
-}
-
-.tgt-v {
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
-  transform: translateX(-50%);
-}
-
-.tgt-dot {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: #c44536;
-  transform: translate(-50%, -50%);
-}
-
-.reticle.is-hot .tgt-ring {
-  border-color: var(--color-champagne);
+.photo-cursor.is-shooting {
+  transform: translate(-50%, -50%) scale(0.84);
+  transition: transform 0.1s ease;
 }
 
 .folder-grid {
@@ -899,8 +819,7 @@
   .ticker-track,
   .lightbox,
   .lightbox-stage img,
-  .menu-panel,
-  .cam-flash {
+  .menu-panel {
     animation: none;
   }
 
