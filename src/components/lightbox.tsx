@@ -1,5 +1,4 @@
-import { useEffect, useRef } from "react";
-import { createPortal } from "react-dom";
+import { useEffect } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { categoryLabel, type Shot } from "@/data/site";
 
@@ -13,8 +12,6 @@ type Props = {
 };
 
 export function Lightbox({ shot, index, total, onClose, onPrev, onNext }: Props) {
-  const drag = useRef<{ x: number; y: number } | null>(null);
-
   useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -23,58 +20,41 @@ export function Lightbox({ shot, index, total, onClose, onPrev, onNext }: Props)
     };
   }, []);
 
-  return createPortal(
+  return (
     <div className="lightbox" role="dialog" aria-modal="true" aria-label={shot.title}>
-      <header className="lb-bar">
-        <div className="lb-copy">
+      <div className="wrap-wide flex items-center justify-between gap-4 py-4">
+        <div>
           <p className="eyebrow">
             {categoryLabel(shot.category)} · {shot.year}
           </p>
-          <p className="lb-title">{shot.title}</p>
+          <p className="display mt-1 text-3xl">{shot.title}</p>
         </div>
-        <button type="button" className="lb-btn" onClick={onClose} aria-label="Închide">
-          <X className="size-4" />
-        </button>
-      </header>
-
-      <div
-        className="lightbox-stage"
-        onPointerDown={(e) => {
-          if ((e.target as HTMLElement).closest("button")) return;
-          drag.current = { x: e.clientX, y: e.clientY };
-        }}
-        onPointerUp={(e) => {
-          const start = drag.current;
-          drag.current = null;
-          if (!start) return;
-          const dx = e.clientX - start.x;
-          const dy = e.clientY - start.y;
-          if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy)) return;
-          if (dx < 0) onNext();
-          else onPrev();
-        }}
-        onPointerCancel={() => {
-          drag.current = null;
-        }}
-      >
-        <img key={shot.id} src={shot.src} alt={shot.alt} />
+        <div className="flex items-center gap-2">
+          <p className="mr-2 hidden text-sm text-paper-dim sm:block">
+            {index + 1} / {total}
+            <span className="mx-2 text-muted">·</span>
+            esc
+          </p>
+          <button type="button" className="lb-btn" onClick={onClose} aria-label="Închide">
+            <X className="size-4" />
+          </button>
+        </div>
       </div>
-
-      <footer className="lb-bar">
-        <button type="button" className="lb-btn" onClick={onPrev} aria-label="Cadrul anterior">
+      <div className="lightbox-stage">
+        <button type="button" className="lb-btn absolute left-3 md:left-6" onClick={onPrev} aria-label="Cadrul anterior">
           <ChevronLeft className="size-5" />
         </button>
-        <p className="lb-meta">
-          <span>{shot.place}</span>
-          <span className="lb-count">
-            {index + 1} / {total}
-          </span>
-        </p>
-        <button type="button" className="lb-btn" onClick={onNext} aria-label="Cadrul următor">
+        <img key={shot.id} src={shot.src} alt={shot.alt} />
+        <button type="button" className="lb-btn absolute right-3 md:right-6" onClick={onNext} aria-label="Cadrul următor">
           <ChevronRight className="size-5" />
         </button>
-      </footer>
-    </div>,
-    document.body,
+      </div>
+      <div className="wrap-wide flex items-center justify-between py-4 text-sm text-paper-dim">
+        <p>{shot.place}</p>
+        <p className="sm:hidden">
+          {index + 1} / {total}
+        </p>
+      </div>
+    </div>
   );
 }
