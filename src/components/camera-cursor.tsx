@@ -46,28 +46,12 @@ export function PhotoCursor() {
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <g stroke="var(--color-ink)" strokeWidth="1.2">
-          {/* Top-left focus point */}
-          <circle cx="8" cy="8" r="3" />
-          {/* Top-center focus point */}
-          <circle cx="16" cy="8" r="3" />
-          {/* Top-right focus point */}
-          <circle cx="24" cy="8" r="3" />
-          {/* Middle-left focus point */}
-          <circle cx="8" cy="16" r="3" />
-          {/* Center focus point (target area) */}
-          <circle cx="16" cy="16" r="3" fill="var(--color-film)" />
-          {/* Middle-right focus point */}
-          <circle cx="24" cy="16" r="3" />
-          {/* Bottom-left focus point */}
-          <circle cx="8" cy="24" r="3" />
-          {/* Bottom-center focus point */}
-          <circle cx="16" cy="24" r="3" />
-          {/* Bottom-right focus point */}
-          <circle cx="24" cy="24" r="3" />
-        </g>
-        {/* Center circle representing the lens */}
-        <circle cx="16" cy="16" r="6" fill="none" stroke="var(--color-ink)" strokeWidth="1.5" />
+        {/* Camera shutter silhouette: rectangular border with circular opening */}
+        <rect x="3" y="3" width="26" height="26" rx="4" stroke="var(--color-ink)" strokeWidth="1.5" fill="none" />
+        {/* Circular lens opening in the center */}
+        <circle cx="19" cy="19" r="8" fill="none" stroke="var(--color-ink)" strokeWidth="2" />
+        {/* Inner circle for depth */}
+        <circle cx="19" cy="19" r="5" fill="none" stroke="var(--color-paper)" strokeWidth="1" />
       </svg>
     </div>
   );
