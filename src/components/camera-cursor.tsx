@@ -1,13 +1,30 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function PhotoCursor() {
+  const [enabled, setEnabled] = useState(false);
   const cursorRef = useRef<HTMLDivElement>(null);
   const flashRef = useRef<HTMLDivElement>(null);
 
+  // Decide once on mount (and react to media-query changes)
   useEffect(() => {
     const fine = window.matchMedia("(hover: hover) and (pointer: fine) and (min-width: 1080px)");
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (!fine.matches || reduce.matches) return;
+
+    const update = () => {
+      setEnabled(fine.matches && !reduce.matches);
+    };
+
+    update();
+    fine.addEventListener("change", update);
+    reduce.addEventListener("change", update);
+    return () => {
+      fine.removeEventListener("change", update);
+      reduce.removeEventListener("change", update);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) return;
 
     const cursor = cursorRef.current;
     const flash = flashRef.current;
@@ -16,10 +33,14 @@ export function PhotoCursor() {
 
     root.classList.add("has-photo-cursor");
 
+    // Keep cursor hidden until the first real mouse move so it never flashes at (0,0)
+    cursor.style.opacity = "0";
+
     const onMove = (e: MouseEvent) => {
       const x = Math.min(Math.max(e.clientX, 15), window.innerWidth - 15);
       const y = Math.min(Math.max(e.clientY, 15), window.innerHeight - 15);
       cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+      cursor.style.opacity = "1";
     };
 
     const onDown = () => {
@@ -46,7 +67,10 @@ export function PhotoCursor() {
       window.removeEventListener("pointerdown", onDown);
       root.classList.remove("has-photo-cursor");
     };
-  }, []);
+  }, [enabled]);
+
+  // Never mount the cursor DOM on touch / coarse-pointer / reduced-motion devices
+  if (!enabled) return null;
 
   return (
     <>
