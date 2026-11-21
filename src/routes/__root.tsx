@@ -2,6 +2,7 @@ import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-r
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { PhotoCursor } from "@/components/camera-cursor";
+import { RiseObserver } from "@/components/rise-observer";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import appCss from "../styles.css?url";
@@ -42,6 +43,7 @@ export const Route = createRootRoute({
         <AuthProvider>
           <div id="top">
             <PhotoCursor />
+            <RiseObserver />
             <SiteHeader />
             <Outlet />
             <SiteFooter />

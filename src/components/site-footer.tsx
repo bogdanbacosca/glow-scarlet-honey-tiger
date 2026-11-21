@@ -5,13 +5,13 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-line">
       <div className="wrap-wide grid gap-10 py-14 md:grid-cols-12">
-        <div className="md:col-span-5">
+        <div className="md:col-span-5" data-rise>
           <img src="/logo.svg" alt="In-Vogue Media" className="h-20 w-auto md:h-24 mb-4" />
           <p className="lede mt-5">
             Capturăm momentele tale speciale. Nunți, botezuri, corporate, studio, majorate.
           </p>
         </div>
-        <div className="flex flex-col gap-3 md:col-span-3">
+        <div className="flex flex-col gap-3 md:col-span-3" data-rise style={{ ["--d" as string]: "90ms" }}>
           <p className="eyebrow">Studio</p>
           <Link to="/portofoliu" search={{ cat: "toate" }} className="text-paper-dim hover:text-paper">
             Portofoliu
@@ -23,7 +23,7 @@ export function SiteFooter() {
             Contact
           </Link>
         </div>
-        <div className="flex flex-col gap-3 md:col-span-4">
+        <div className="flex flex-col gap-3 md:col-span-4" data-rise style={{ ["--d" as string]: "160ms" }}>
           <p className="eyebrow">Ofertă</p>
           <a href={PHONE_TEL} className="display text-4xl text-paper hover:text-champagne">
             {PHONE_DISPLAY}

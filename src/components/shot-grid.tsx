@@ -40,6 +40,8 @@ export function ShotGrid({ shots }: { shots: Shot[] }) {
             type="button"
             className="shot"
             data-cursor="view"
+            data-rise="scale"
+            style={{ ["--d" as string]: `${Math.min(i, 8) * 60}ms` }}
             onClick={() => setIndex(i)}
           >
             <span className={cn("shot-frame", ratioClass[shot.ratio])}>

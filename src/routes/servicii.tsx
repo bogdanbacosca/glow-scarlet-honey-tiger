@@ -19,18 +19,23 @@ function ServicesPage() {
   return (
     <main id="content" className="page-enter pt-28">
       <header className="wrap-wide">
-        <p className="eyebrow">Servicii</p>
-        <h1 className="display mt-4 max-w-4xl text-6xl md:text-8xl">
+        <p className="eyebrow" data-rise>Servicii</p>
+        <h1 className="display mt-4 max-w-4xl text-6xl md:text-8xl" data-rise style={{ ["--d" as string]: "90ms" }}>
           Ce filmăm și ce fotografiem.
         </h1>
-        <p className="lede mt-6">
+        <p className="lede mt-6" data-rise style={{ ["--d" as string]: "180ms" }}>
           Nu vindem pachete cu nume de flori. Spune-ne evenimentul și îți trimitem o ofertă clară,
           pe telefon.
         </p>
       </header>
       <div className="wrap-wide mt-14">
-        {services.map((service) => (
-          <article key={service.id} className="grid gap-6 border-t border-line py-10 md:grid-cols-12 md:items-center">
+        {services.map((service, i) => (
+          <article
+            key={service.id}
+            className="grid gap-6 border-t border-line py-10 md:grid-cols-12 md:items-center"
+            data-rise
+            style={{ ["--d" as string]: `${Math.min(i, 4) * 70}ms` }}
+          >
             <div className="md:col-span-5">
               <img src={service.image} alt={service.alt} className="aspect-video w-full object-cover" />
             </div>

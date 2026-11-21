@@ -75,22 +75,36 @@ function ContactPage() {
     <main id="content" className="page-enter pt-28">
       <div className="wrap-wide grid gap-14 pb-20 md:grid-cols-12">
         <div className="md:col-span-5">
-          <p className="eyebrow">Contact</p>
-          <h1 className="display mt-4 text-6xl md:text-7xl">Contactați-ne pentru ofertă.</h1>
-          <p className="lede mt-6">
+          <p className="eyebrow" data-rise>Contact</p>
+          <h1 className="display mt-4 text-6xl md:text-7xl" data-rise style={{ ["--d" as string]: "80ms" }}>
+            Contactați-ne pentru ofertă.
+          </h1>
+          <p className="lede mt-6" data-rise style={{ ["--d" as string]: "160ms" }}>
             Cel mai rapid e telefonul. Dacă lași o cerere aici, rămâne pe acest dispozitiv ca să o
             ai la îndemână când suni.
           </p>
-          <a href={PHONE_TEL} className="display mt-8 block text-5xl text-paper hover:text-champagne">
+          <a
+            href={PHONE_TEL}
+            className="display mt-8 block text-5xl text-paper hover:text-champagne"
+            data-rise
+            style={{ ["--d" as string]: "240ms" }}
+          >
             {PHONE_DISPLAY}
           </a>
-          <a href={FACEBOOK} target="_blank" rel="noreferrer" className="mt-6 inline-block text-paper-dim hover:text-paper">
+          <a
+            href={FACEBOOK}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 inline-block text-paper-dim hover:text-paper"
+            data-rise
+            style={{ ["--d" as string]: "320ms" }}
+          >
             Oferte și concursuri pe Facebook
           </a>
         </div>
         <div className="md:col-span-7">
           {saved ? (
-            <div className="border border-line p-6 md:p-8">
+            <div className="border border-line p-6 md:p-8" data-rise="scale">
               <p className="eyebrow">Cerere notată</p>
               <h2 className="display mt-3 text-4xl">Te așteptăm la telefon, {saved.name.split(" ")[0]}.</h2>
               <p className="mt-4 text-paper-dim">
@@ -107,7 +121,7 @@ function ContactPage() {
               </div>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="grid gap-6" noValidate>
+            <form onSubmit={onSubmit} className="grid gap-6" noValidate data-rise="scale" style={{ ["--d" as string]: "120ms" }}>
               <label className="field">
                 <span>Nume</span>
                 <input value={name} onChange={(e) => setName(e.target.value)} name="name" autoComplete="name" />

@@ -37,7 +37,7 @@ export function SiteHeader() {
       </a>
       <header className={cn("site-header", (solid || open) && "is-solid")}>
         <div className="wrap-wide flex h-16 items-center justify-between gap-4 md:h-20">
-          <Link to="/" className="flex items-center gap-3 leading-none" aria-label="In-Vogue Media, acasă">
+          <Link to="/" className="logo-mark flex items-center gap-3 leading-none" aria-label="In-Vogue Media, acasă">
             <img src="/logo.svg" alt="In-Vogue Media" className="h-8 w-auto md:h-10" />
           </Link>
           <nav className="hidden items-center gap-8 md:flex" aria-label="Principal">

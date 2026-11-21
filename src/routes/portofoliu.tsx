@@ -33,15 +33,19 @@ function PortfolioPage() {
   return (
     <main id="content" className="page-enter pt-24 md:pt-28">
       <header className="wrap-wide pb-8">
-        <p className="eyebrow">{folder ? `Folder · ${folder.index}` : "Portofoliu"}</p>
+        <p className="eyebrow" data-rise>
+          {folder ? `Folder · ${folder.index}` : "Portofoliu"}
+        </p>
         <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <h1 className="display text-6xl md:text-8xl">{folder ? folder.title : "Cadrele."}</h1>
-          <p className="lede">
+          <h1 className="display text-6xl md:text-8xl" data-rise style={{ ["--d" as string]: "80ms" }}>
+            {folder ? folder.title : "Cadrele."}
+          </h1>
+          <p className="lede" data-rise style={{ ["--d" as string]: "160ms" }}>
             {visible.length} {visible.length === 1 ? "cadru" : "cadre"}
             {cat === "toate" ? ". Apasă pe o imagine — săgețile merg mai departe." : "."}
           </p>
         </div>
-        <div className="chip-row mt-8" role="tablist" aria-label="Filtrează portofoliul">
+        <div className="chip-row mt-8" role="tablist" aria-label="Filtrează portofoliul" data-rise style={{ ["--d" as string]: "220ms" }}>
           {categories.map((c) => (
             <Link
               key={c.id}
